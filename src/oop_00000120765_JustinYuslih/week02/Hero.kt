@@ -2,7 +2,7 @@ package oop_00000120765_JustinYuslih.week02
 
 class Hero(
     val name: String,
-    val hp: Int = 100,
+    var hp: Int = 100,
     val baseDamage: Int
 )
 {
@@ -10,16 +10,12 @@ class Hero(
         println("$name sedang menenebas $targetName")
     }
     fun damage(damage: Int){
-        hp = hp - damage
-        if(hp < 0){
-            println("Anda metong")
+        hp -= damage
+        if(hp <= 0){
             hp = 0
+            println("Anda metong")
         }
     }
 
-    fun isAlive(): Boolean{
-        if(hp > 0){
-            return 1
-        }
-    }
+    fun isAlive(): Boolean = hp > 0
 }

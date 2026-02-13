@@ -7,7 +7,7 @@ fun main() {
 
     println("--- PROGRAM WEEK 2 ---")
 
-    println("Opsi (1. Daftar Mahasiswa Baru, 2. Pinjam Buku)")
+    println("Opsi (1. Daftar Mahasiswa Baru, 2. Pinjam Buku, 3. Main Game)")
     val pick = scanner.nextInt()
     scanner.nextLine()
 
@@ -66,5 +66,39 @@ fun main() {
         println("Nama peminjam : ${b1.borrower}")
         println("Durasi peminjaman : ${b1.loanDuration}")
         println("Total denda : ${b1.calculateFine()}")
+    }else if (pick == 3){
+        println("Masukkan Nama Hero : ")
+        var heroName = scanner.nextLine()
+
+        println("Masukkan Base Damage : ")
+        var baseDamage = scanner.nextInt()
+
+        var enemyHp = 100
+
+        var g1 = Hero(heroName, 100 , baseDamage)
+        while(g1.isAlive() && enemyHp > 0){
+            println("\nHP Kamu: ${g1.hp} | HP Musuh: $enemyHp")
+            println("Menu (1. Serang, 2. Kabur)")
+            var opsi = scanner.nextInt()
+            scanner.nextLine()
+
+            if(opsi == 1){
+                g1.attack("Louis")
+                enemyHp -= g1.baseDamage
+
+                if(enemyHp > 0){
+                    val randomDmg = (10..20).random()
+                    g1.damage(randomDmg)
+                    println("Musuh membalas! Kamu kena $randomDmg damage.")
+                }
+            }else if(opsi == 2){
+                println("Atut aku kabur ah")
+                break
+            }
+
+        }
+        println("Game Over")
+        if(enemyHp <= 0) println("SELAMAT KAMU MENANG!")
+        else if (!g1.isAlive()) println("KALAH! $heroName jadi almarhum.")
     }
 }
