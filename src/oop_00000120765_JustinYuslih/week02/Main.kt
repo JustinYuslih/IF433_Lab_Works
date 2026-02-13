@@ -5,7 +5,7 @@ import java.util.Scanner
 fun main() {
     val scanner = Scanner(System. `in`)
 
-    println("--- APLIKASI PMB UMN ---")
+    println("--- PROGRAM WEEK 2 ---")
 
     println("Opsi (1. Daftar Mahasiswa Baru, 2. Pinjam Buku)")
     val pick = scanner.nextInt()
