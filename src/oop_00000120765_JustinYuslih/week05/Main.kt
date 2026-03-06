@@ -4,6 +4,10 @@ fun main(){
     val dosen1 = Dosen("Pak Alex", "0123456")
     val admin1 = Admin("Bu Siti")
     val math = MathHelper()
+    val eWallet = EWallet("Justin", 50000.0)
+    val crediCard = CreditCard("Justin", 100000.0)
+
+    val daftarPayment: List<PaymentMethod> = listOf(eWallet, crediCard)
 
     val daftarPegawai: List<Pegawai> = listOf(dosen1, admin1)
 
@@ -13,6 +17,11 @@ fun main(){
     println("Luas Kedua : ${luas2}")
     val luas3 = math.hitungLuas(5.5)
     println("Luas Ketiga : ${luas3}")
+
+    println("=== AKTIVITAS PAYMENT ===")
+    for(payment in daftarPayment){
+        payment.processPayment(750000.0)
+    }
 
     println("=== AKTIVITAS PEGAWAI ===")
     for(pegawai in daftarPegawai){
