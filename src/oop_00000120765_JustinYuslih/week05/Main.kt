@@ -5,9 +5,9 @@ fun main(){
     val admin1 = Admin("Bu Siti")
     val math = MathHelper()
     val eWallet = EWallet("Justin", 50000.0)
-    val crediCard = CreditCard("Justin", 100000.0)
+    val creditCard = CreditCard("Justin", 100000.0)
 
-    val daftarPayment: List<PaymentMethod> = listOf(eWallet, crediCard)
+    val daftarPayment: List<PaymentMethod> = listOf(eWallet, creditCard)
 
     val daftarPegawai: List<Pegawai> = listOf(dosen1, admin1)
 
@@ -20,7 +20,13 @@ fun main(){
 
     println("=== AKTIVITAS PAYMENT ===")
     for(payment in daftarPayment){
-        payment.processPayment(750000.0)
+        payment.processPayment(75000.0)
+        when(payment){
+            is EWallet -> {
+                payment.topUp(50000.0)
+                payment.processPayment(75000.0)
+            }
+        }
     }
 
     println("=== AKTIVITAS PEGAWAI ===")
