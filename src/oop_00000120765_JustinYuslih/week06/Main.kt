@@ -19,6 +19,13 @@ fun main(){
     val smartSpeaker = SmartSpeaker("002", "Google Nest Dapur")
     val smartCCTV = SmartCCTV("003", "Ezviz Garasi")
 
+    val hub = SmartHomeHub()
+    hub.addDevice(smartLamp)
+    hub.addDevice(smartSpeaker)
+    hub.addDevice(smartCCTV)
+    hub.activateSecurityModel()
+    hub.turnOffAllSwitches()
+
     println("\n=== TESTING CHECKOUT ====")
     processCheckout(pay1, 50000.0)
     processCheckout(pay2, 150000.0)

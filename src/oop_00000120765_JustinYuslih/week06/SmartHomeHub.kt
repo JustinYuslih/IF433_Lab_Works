@@ -5,7 +5,7 @@ class SmartHomeHub{
 
     fun addDevice(device: SmartDevice){
         devices.add(device)
-        println("Menambahkan $device ke list")
+        println("Menambahkan ${device.name} ke list")
     }
 
     fun turnOffAllSwitches(){
