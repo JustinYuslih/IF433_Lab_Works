@@ -37,4 +37,8 @@ fun main(){
     }
 
     println(uimessage)
+
+    println("\n=== SIMULASI GAME ===")
+    GameManager.startGame()
+    GameManager.startGame()
 }
