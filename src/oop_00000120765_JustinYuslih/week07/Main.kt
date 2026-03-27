@@ -41,4 +41,12 @@ fun main(){
     println("\n=== SIMULASI GAME ===")
     GameManager.startGame()
     GameManager.startGame()
+
+    println(ItemRarity.LEGENDARY.dropChance)
+    val weapon = Weapon.forgeStarterSword()
+
+    val (name, damage, rarity) = weapon.item
+    val durability = weapon.durability
+
+    println("Nama pedang: $name, Damage: $damage, Rarity: $rarity, Durability: $durability")
 }
