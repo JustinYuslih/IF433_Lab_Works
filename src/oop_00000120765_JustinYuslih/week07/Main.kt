@@ -49,4 +49,17 @@ fun main(){
     val durability = weapon.durability
 
     println("Nama pedang: $name, Damage: $damage, Rarity: $rarity, Durability: $durability")
+
+    val itemLama = weapon.item
+    val weapon2 = itemLama.copy(damage = 25)
+    processEvent(BattleState.SafeZone)
+    println("-------------------")
+
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    println("-------------------")
+
+    processEvent(BattleState.LootDropped(weapon2))
+    println("-------------------")
+
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
 }
