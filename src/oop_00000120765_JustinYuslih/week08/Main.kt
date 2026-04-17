@@ -12,8 +12,8 @@ fun main(){
 
     val receipt = validOrder.totalPrice?.let{ price ->
         val tax = price * 0.11
-        "Transaksi Valid. Harga: Rp$price, pajak: Rp$tax"
-    } ?: "Transaksi Invalid: Harga belum di-set!"
+        println("Transaksi Valid. Harga: Rp$price, pajak: Rp$tax")
+    } ?: println("Transaksi Invalid: Harga belum di-set!")
 
     println("\n=== TEST SAFE CASTING ===")
     val mixedData: List<Any> = listOf(
