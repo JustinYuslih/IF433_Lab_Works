@@ -16,7 +16,7 @@ fun main(){
                 api.checkout(it)
             }
         } catch (e: IllegalArgumentException) {
-            println("⚠️ Peringatan: Data korup dilewati. Detail: ${e.message}")
+            println("⚠️ Peringatan : Data korup dilewati. Detail: ${e.message}")
         }
     }
 }
