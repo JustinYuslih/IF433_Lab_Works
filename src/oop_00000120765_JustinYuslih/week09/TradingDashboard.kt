@@ -5,13 +5,14 @@ fun main(){
         TradeLog("BTC/USDT", "LONG", 10, 15.5, "CLOSED"),
         TradeLog("ETH/USDT", "SHORT", 20, -5.2, "OPEN"),
         TradeLog("SOL/USDT", "LONG", 5, 40.0, "CLOSED"),
-        TradeLog("BNB/USDT", "SHORT", 15, 12.3, "CLOSED"),
-        TradeLog("ADA/USDT", "LONG", 10, -2.0, "OPEN"),
+        TradeLog("BNB/USDT", "SHORT", 15, 12.3, "OPEN"),
+        TradeLog("ADA/USDT", "LONG", 10, -2.0, "CLOSED"),
         TradeLog("DOT/USDT", "SHORT", 25, 8.5, "CLOSED")
     )
 
     val closedTrade = tradeHistory.filter {it.status == "CLOSED"}
     val winningTrades = closedTrade.filter{it.roe > 0}
     val losingTrades = closedTrade.filter{it.roe <= 0}
-    var topPerfomersString = winningTrades.sortedByDescending { it.roe }.map{"WIN [${it.pair} - ${it.position}]: +${it.roe}% ROE (Lev: ${it.leverage}x)"}
+    val topPerfomersString = winningTrades.sortedByDescending { it.roe }.map{"WIN [${it.pair} - ${it.position}]: +${it.roe}% ROE (Lev: ${it.leverage}x)"}
+    val worstPerfomersString = losingTrades.sortedBy { it.roe }.map{"LOSS [${it.pair} - ${it.position}]: ${it.roe}% ROE (Lev: ${it.leverage}x)"}
 }
