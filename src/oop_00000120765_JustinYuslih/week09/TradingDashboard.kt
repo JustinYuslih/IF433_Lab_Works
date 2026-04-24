@@ -13,4 +13,5 @@ fun main(){
     val closedTrade = tradeHistory.filter {it.status == "CLOSED"}
     val winningTrades = closedTrade.filter{it.roe > 0}
     val losingTrades = closedTrade.filter{it.roe <= 0}
+    var topPerfomersString = winningTrades.sortedByDescending { it.roe }.map{"WIN [${it.pair} - ${it.position}]: +${it.roe}% ROE (Lev: ${it.leverage}x)"}
 }
