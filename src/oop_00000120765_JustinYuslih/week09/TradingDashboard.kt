@@ -9,4 +9,6 @@ fun main(){
         TradeLog("ADA/USDT", "LONG", 10, -2.0, "OPEN"),
         TradeLog("DOT/USDT", "SHORT", 25, 8.5, "CLOSED")
     )
+
+    val closedTrade = tradeHistory.filter {it.status == "CLOSED"}
 }
