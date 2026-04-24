@@ -21,4 +21,5 @@ fun main(){
     topPerfomersString.forEach { println("Top perfomers: $it") }
     worstPerfomersString.forEach { println("WORST perfomers: $it") }
     println("Unique pairs: $uniquePairs")
+    // Sudah di cek
 }
