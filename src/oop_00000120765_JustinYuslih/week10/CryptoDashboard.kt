@@ -20,4 +20,11 @@ fun main(){
     txRepo.add(Transaction("001", 5000.0))
     txRepo.add(Transaction("002", 100000.0))
     txRepo.add(Transaction("003", 200000.0))
+
+    val response2 = ApiResponse("200 OK", txRepo.getAll())
+    println("${response2.status}")
+    response2.data.forEach {
+        println("Transaction ID: ${it.id}")
+        println("Amount: ${it.amount}")
+    }
 }
