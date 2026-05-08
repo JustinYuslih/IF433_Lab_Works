@@ -29,4 +29,9 @@ fun main(){
     val searchResult = homeDevices.find{it.category == "Camera"}?.let {
         println(it.diagnose())
     }
+
+    with(homeDevices) {
+        println("--- Rangkuman Perangkat Pintar ---")
+        println("Total Perangkat Terdaftar: ${this.size}")
+    }
 }
