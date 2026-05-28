@@ -45,5 +45,5 @@ fun main(){
     val loadedData = loadTrades("crypto_trades.csv")
     val sum = loadedData.sumOf{it.pnl}
     println("Sum: $sum")
-
+    // Sudah di coba
 }
